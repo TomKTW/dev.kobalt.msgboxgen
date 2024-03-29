@@ -1,24 +1,6 @@
-/*
- * dev.kobalt.msgboxgen
- * Copyright (C) 2024 Tom.K
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 plugins {
-    kotlin("jvm") version "1.9.22"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    kotlin("jvm")
+    id("com.github.johnrengelman.shadow")
 }
 
 group = "dev.kobalt"
@@ -51,7 +33,7 @@ dependencies {
 
 tasks {
     named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
-        archiveFileName.set("msgboxgen.jar")
+        archiveFileName.set("msgboxgen.jvm.jar")
         mergeServiceFiles()
         manifest {
             attributes("Main-Class" to "dev.kobalt.msgboxgen.jvm.MainKt")
